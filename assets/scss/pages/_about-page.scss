@@ -1,0 +1,41 @@
+#about_page{
+    background-color: $white-color;
+padding-bottom: 0;
+    .two_col_sec{
+        margin: 0 0 6rem;
+        padding: 0;
+    background-color: transparent;
+
+    }
+}
+
+// MISSION VISION 
+#mission_vision{
+    .two_col_wrapper_flx{
+        display: inherit;
+    }
+    .right_col_wrapper{
+        display: inherit;
+    .right_img_wrap{
+        height: 25rem;
+        float: left;
+        padding-right: 2rem;
+        padding-bottom: 1rem;
+        &:after{
+            display: none;
+        }
+        img{
+            border-radius: 3px;
+        }
+    }
+}
+}
+
+// Board Members
+.sec_title{
+    // margin-top: 4rem;
+} 
+
+#message_sec{
+    margin-bottom: 4rem;
+}
