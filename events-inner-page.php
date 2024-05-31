@@ -9,6 +9,10 @@
                 <div class="inner_wrap">
                     <div class="img_wrap">
                         <img src="assets/images/background/enquiry.png" alt="">
+                        <div class="label_overlay">
+                                    <h5>11</h5>
+                                    <h5>May</h5>
+                                </div>
                     </div>
                     <div class="author_media_wrapper top_col_ct">
                         <ul class="col_left">

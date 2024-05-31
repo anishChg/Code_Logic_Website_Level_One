@@ -13,7 +13,13 @@
                 padding: 0 1%;
 
                 .img_wrap {
+                    position: relative;
                     img {}
+                    .label_overlay{
+                        h5{
+                            line-height: 1.5;
+                        }
+                    }
                 }
 
                 .inner_details {
@@ -112,6 +118,7 @@
                 flex: 1 1 20%;
                 border-radius: 3px;
                 background-color: $primary-color;
+               
 
                 img {
                     width: 100%;
@@ -153,7 +160,13 @@
     .author_media_wrapper {
         margin: 1.4rem 0;
         border-bottom: 1px solid $border-color;
-        padding-bottom: 0.6rem;
+        padding-bottom: 0.8rem;
+        display: flex;
+        justify-content: space-between;
+
+        @include max(992px) {
+            display: inherit;
+        }
 
         &.top_col_ct {
             @include max(992px) {
@@ -164,9 +177,20 @@
         .col_left {
             gap: 2rem;
             align-items: center;
+            display: flex;
+
+            @include max(767px) {
+                display: inherit;
+            }
 
             li {
                 color: $body-color;
+                display: flex;
+                align-items: center;
+
+                @include max(767px) {
+                    margin-bottom: 0.5rem;
+                }
 
                 &:nth-child(1) {
                     display: flex;
@@ -180,10 +204,12 @@
 
         .social_media {
             align-items: center;
+            display: flex;
 
             @include max(992px) {
                 justify-content: flex-start;
                 margin-left: 0.5rem;
+                margin-top: 0.5rem;
 
             }
 

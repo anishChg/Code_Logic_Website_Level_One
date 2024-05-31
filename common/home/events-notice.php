@@ -19,6 +19,10 @@
                             <a href="events-inner-page.php">
                                 <div class="card_img">
                                     <img src="assets/images/events/b.jpg" alt="">
+                                    <div class="label_overlay">
+                                        <h5>11</h5>
+                                        <h5>May</h5>
+                                    </div>
                                 </div>
                                 <div class="card_img_des">
                                     <h1>Inspiring Curiosity and critical in kids</h1>

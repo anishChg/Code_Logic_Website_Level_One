@@ -213,6 +213,30 @@ p {
   text-align: center;
 }
 
+/* Add this to your existing CSS file */
+.top_head {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001; /* Ensure it's above other elements */
+}
+
+.nav_header {
+  position: fixed;
+  top: 50px; /* Adjust based on the height of .top_head */
+  width: 100%;
+  z-index: 1000;
+  transition: top 0.3s ease-in-out;
+}
+
+.nav_header.hidden {
+  top: -50px; /* Adjust this value based on the header height */
+}
+
+.nav_header.sticky {
+  top: 50px; /* Same as the height of .top_head */
+}
+
 header .top_head {
   padding: 0.6rem;
 }
@@ -621,17 +645,9 @@ header .nav_header .header_main .header_col .balpatrika_btn button span {
     flex: 1 0 100%;
   }
 }
-.service_section .col_card_wrapper .col_card_flx_wrapper .col_card_wrap:nth-child(1) .card_icon {
-  background-image: url("data:image/svg+xml,%3Csvg width%3D%2245%22 height%3D%2245%22 viewBox%3D%220 0 45 45%22 fill%3D%22none%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath d%3D%22M5.625 4.21875V40.7812H21.0938V35.1562H23.9062V40.7812H39.375V4.21875H5.625ZM8.4375 7.03125H36.5625V37.9688H26.7188V32.3438H18.2812V37.9688H8.4375V7.03125ZM11.25 9.84375V12.6562H16.875V9.84375H11.25ZM19.6875 9.84375V12.6562H25.3125V9.84375H19.6875ZM28.125 9.84375V12.6562H33.75V9.84375H28.125ZM11.25 15.4688V18.2812H16.875V15.4688H11.25ZM19.6875 15.4688V18.2812H25.3125V15.4688H19.6875ZM28.125 15.4688V18.2812H33.75V15.4688H28.125ZM11.25 21.0938V23.9062H16.875V21.0938H11.25ZM19.6875 21.0938V23.9062H25.3125V21.0938H19.6875ZM28.125 21.0938V23.9062H33.75V21.0938H28.125ZM11.25 26.7188V29.5312H16.875V26.7188H11.25ZM19.6875 26.7188V29.5312H25.3125V26.7188H19.6875ZM28.125 26.7188V29.5312H33.75V26.7188H28.125ZM11.25 32.3438V35.1562H16.875V32.3438H11.25ZM28.125 32.3438V35.1562H33.75V32.3438H28.125Z%22 fill%3D%22%23008060%22%2F%3E%3C%2Fsvg%3E");
-}
-.service_section .col_card_wrapper .col_card_flx_wrapper .col_card_wrap:nth-child(2) .card_icon {
-  background-image: url("data:image/svg+xml,%3Csvg width%3D%2245%22 height%3D%2245%22 viewBox%3D%220 0 45 45%22 fill%3D%22none%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath d%3D%22M5.625 4.21875V40.7812H21.0938V35.1562H23.9062V40.7812H39.375V4.21875H5.625ZM8.4375 7.03125H36.5625V37.9688H26.7188V32.3438H18.2812V37.9688H8.4375V7.03125ZM11.25 9.84375V12.6562H16.875V9.84375H11.25ZM19.6875 9.84375V12.6562H25.3125V9.84375H19.6875ZM28.125 9.84375V12.6562H33.75V9.84375H28.125ZM11.25 15.4688V18.2812H16.875V15.4688H11.25ZM19.6875 15.4688V18.2812H25.3125V15.4688H19.6875ZM28.125 15.4688V18.2812H33.75V15.4688H28.125ZM11.25 21.0938V23.9062H16.875V21.0938H11.25ZM19.6875 21.0938V23.9062H25.3125V21.0938H19.6875ZM28.125 21.0938V23.9062H33.75V21.0938H28.125ZM11.25 26.7188V29.5312H16.875V26.7188H11.25ZM19.6875 26.7188V29.5312H25.3125V26.7188H19.6875ZM28.125 26.7188V29.5312H33.75V26.7188H28.125ZM11.25 32.3438V35.1562H16.875V32.3438H11.25ZM28.125 32.3438V35.1562H33.75V32.3438H28.125Z%22 fill%3D%22%23008060%22%2F%3E%3C%2Fsvg%3E");
-}
-.service_section .col_card_wrapper .col_card_flx_wrapper .col_card_wrap:nth-child(3) .card_icon {
-  background-image: url("data:image/svg+xml,%3Csvg width%3D%2245%22 height%3D%2245%22 viewBox%3D%220 0 45 45%22 fill%3D%22none%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath d%3D%22M5.625 4.21875V40.7812H21.0938V35.1562H23.9062V40.7812H39.375V4.21875H5.625ZM8.4375 7.03125H36.5625V37.9688H26.7188V32.3438H18.2812V37.9688H8.4375V7.03125ZM11.25 9.84375V12.6562H16.875V9.84375H11.25ZM19.6875 9.84375V12.6562H25.3125V9.84375H19.6875ZM28.125 9.84375V12.6562H33.75V9.84375H28.125ZM11.25 15.4688V18.2812H16.875V15.4688H11.25ZM19.6875 15.4688V18.2812H25.3125V15.4688H19.6875ZM28.125 15.4688V18.2812H33.75V15.4688H28.125ZM11.25 21.0938V23.9062H16.875V21.0938H11.25ZM19.6875 21.0938V23.9062H25.3125V21.0938H19.6875ZM28.125 21.0938V23.9062H33.75V21.0938H28.125ZM11.25 26.7188V29.5312H16.875V26.7188H11.25ZM19.6875 26.7188V29.5312H25.3125V26.7188H19.6875ZM28.125 26.7188V29.5312H33.75V26.7188H28.125ZM11.25 32.3438V35.1562H16.875V32.3438H11.25ZM28.125 32.3438V35.1562H33.75V32.3438H28.125Z%22 fill%3D%22%23008060%22%2F%3E%3C%2Fsvg%3E");
-}
-.service_section .col_card_wrapper .col_card_flx_wrapper .col_card_wrap:nth-child(4) .card_icon {
-  background-image: url("data:image/svg+xml,%3Csvg width%3D%2245%22 height%3D%2245%22 viewBox%3D%220 0 45 45%22 fill%3D%22none%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath d%3D%22M5.625 4.21875V40.7812H21.0938V35.1562H23.9062V40.7812H39.375V4.21875H5.625ZM8.4375 7.03125H36.5625V37.9688H26.7188V32.3438H18.2812V37.9688H8.4375V7.03125ZM11.25 9.84375V12.6562H16.875V9.84375H11.25ZM19.6875 9.84375V12.6562H25.3125V9.84375H19.6875ZM28.125 9.84375V12.6562H33.75V9.84375H28.125ZM11.25 15.4688V18.2812H16.875V15.4688H11.25ZM19.6875 15.4688V18.2812H25.3125V15.4688H19.6875ZM28.125 15.4688V18.2812H33.75V15.4688H28.125ZM11.25 21.0938V23.9062H16.875V21.0938H11.25ZM19.6875 21.0938V23.9062H25.3125V21.0938H19.6875ZM28.125 21.0938V23.9062H33.75V21.0938H28.125ZM11.25 26.7188V29.5312H16.875V26.7188H11.25ZM19.6875 26.7188V29.5312H25.3125V26.7188H19.6875ZM28.125 26.7188V29.5312H33.75V26.7188H28.125ZM11.25 32.3438V35.1562H16.875V32.3438H11.25ZM28.125 32.3438V35.1562H33.75V32.3438H28.125Z%22 fill%3D%22%23008060%22%2F%3E%3C%2Fsvg%3E");
+.service_section .col_card_wrapper .col_card_flx_wrapper .col_card_wrap .card_icon svg {
+  font-size: 2rem;
+  color: #008060;
 }
 .service_section .col_card_wrapper .col_card_flx_wrapper .col_card_wrap .col_card_inside_wrap {
   background-color: #fff;
@@ -642,13 +658,14 @@ header .nav_header .header_main .header_col .balpatrika_btn button span {
 }
 .service_section .col_card_wrapper .col_card_flx_wrapper .col_card_wrap .card_title {
   display: flex;
-  gap: 15px;
+  gap: 0.8rem;
   align-items: center;
   margin-bottom: 1rem;
 }
 .service_section .col_card_wrapper .col_card_flx_wrapper .col_card_wrap .card_title .card_icon {
   width: 2.5rem;
   height: 2.5rem;
+  text-align: center;
   background-size: cover;
 }
 .service_section .col_card_wrapper .col_card_flx_wrapper .col_card_wrap .card_title h4 {
@@ -1525,6 +1542,12 @@ header .nav_header .header_main .header_col .balpatrika_btn button span {
   flex: 1 1 68%;
   padding: 0 1%;
 }
+.inner_page .inner_page_wrapper .inner_flx .inner_wrap .img_wrap {
+  position: relative;
+}
+.inner_page .inner_page_wrapper .inner_flx .inner_wrap .img_wrap .label_overlay h5 {
+  line-height: 1.5;
+}
 .inner_page .inner_page_wrapper .inner_flx .inner_wrap .inner_details {
   margin-top: 1.5rem;
 }
@@ -1623,7 +1646,14 @@ header .nav_header .header_main .header_col .balpatrika_btn button span {
 .inner_page .author_media_wrapper {
   margin: 1.4rem 0;
   border-bottom: 1px solid #ddd;
-  padding-bottom: 0.6rem;
+  padding-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 992px) {
+  .inner_page .author_media_wrapper {
+    display: inherit;
+  }
 }
 @media (max-width: 992px) {
   .inner_page .author_media_wrapper.top_col_ct {
@@ -1633,9 +1663,22 @@ header .nav_header .header_main .header_col .balpatrika_btn button span {
 .inner_page .author_media_wrapper .col_left {
   gap: 2rem;
   align-items: center;
+  display: flex;
+}
+@media (max-width: 767px) {
+  .inner_page .author_media_wrapper .col_left {
+    display: inherit;
+  }
 }
 .inner_page .author_media_wrapper .col_left li {
   color: #505050;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .inner_page .author_media_wrapper .col_left li {
+    margin-bottom: 0.5rem;
+  }
 }
 .inner_page .author_media_wrapper .col_left li:nth-child(1) {
   display: flex;
@@ -1645,11 +1688,13 @@ header .nav_header .header_main .header_col .balpatrika_btn button span {
 }
 .inner_page .author_media_wrapper .social_media {
   align-items: center;
+  display: flex;
 }
 @media (max-width: 992px) {
   .inner_page .author_media_wrapper .social_media {
     justify-content: flex-start;
     margin-left: 0.5rem;
+    margin-top: 0.5rem;
   }
 }
 .inner_page .author_media_wrapper .social_media a {
@@ -1719,6 +1764,7 @@ header .nav_header .header_main .header_col .balpatrika_btn button span {
 
 #new_blog_sec .card_flx {
   flex-wrap: wrap;
+  row-gap: 1.2rem;
 }
 #new_blog_sec .card_flx .card_col {
   flex: 0 0 33.3%;
@@ -2086,6 +2132,30 @@ header .nav_header .header_main .header_col .balpatrika_btn button span {
 }
 .wdth_container .container {
   max-width: 94% !important;
+}
+
+.label_overlay {
+  background-color: #008060;
+  padding: 0.8rem;
+  position: absolute;
+  top: 0px;
+  left: 2rem;
+}
+.label_overlay h5 {
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+}
+
+.btm_post {
+  top: unset;
+  bottom: 0px;
+  padding: 0.5rem 1.6rem;
+}
+.btm_post h5 {
+  font-weight: 400;
+  font-size: 0.9rem;
 }
 
 .mg_1 {

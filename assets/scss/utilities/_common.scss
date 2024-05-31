@@ -343,6 +343,32 @@
 }
 
 
+// Label Overlay 
+.label_overlay{
+  background-color: $primary-color;
+  padding: 0.8rem;
+  position: absolute;
+  top: 0px;
+  left: 2rem;
+  h5{
+    font-size: 1rem;
+    color: $white-color;
+    text-align: center;
+    font-weight: 600;
+    // line-height: 1.5;
+  }
+}
+
+.btm_post{
+  top: unset;
+  bottom: 0px;
+  padding: 0.5rem 1.6rem;
+  h5{
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+}
+
 
 
 

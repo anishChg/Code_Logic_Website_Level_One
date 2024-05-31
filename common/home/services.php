@@ -6,7 +6,7 @@
                     <div class="col_card_inside_wrap">
                         <div class="card_title">
                             <div class="card_icon icon1">
-                                <img src="" alt="">
+                            <i class="fa-solid fa-hotel"></i>
                             </div>
                             <h4>Hostel Facilities</h4>
                         </div>
@@ -20,7 +20,7 @@
                     <div class="col_card_inside_wrap">
                         <div class="card_title">
                             <div class="card_icon">
-
+                            <i class="fa-solid fa-bus"></i>
                             </div>
                             <h4>Transportation</h4>
                         </div>
@@ -34,7 +34,7 @@
                     <div class="col_card_inside_wrap">
                         <div class="card_title">
                             <div class="card_icon icon1">
-
+                            <i class="fa-solid fa-flask"></i>
                             </div>
                             <h4>Science Lab</h4>
                         </div>
@@ -48,7 +48,7 @@
                     <div class="col_card_inside_wrap">
                         <div class="card_title">
                             <div class="card_icon icon1">
-
+                            <i class="fa-solid fa-book"></i>
                             </div>
                             <h4>Library</h4>
                         </div>

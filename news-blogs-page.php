@@ -11,6 +11,9 @@
             <div class="card_col">
               <div class="card_img">
                 <img src="assets/images/events/b.jpg" alt="">
+                <div class="label_overlay btm_post">
+                  <h5>Article</h5>
+                </div>
               </div>
               <div class="card_img_des">
                 <h1>Inspiring Curiosity and critical in kids</h1>
@@ -30,6 +33,9 @@
             <div class="card_col">
               <div class="card_img">
                 <img src="assets/images/events/b.jpg" alt="">
+                <div class="label_overlay btm_post">
+                  <h5>Article</h5>
+                </div>
               </div>
               <div class="card_img_des">
                 <h1>Inspiring Curiosity and critical in kids</h1>
@@ -49,6 +55,9 @@
             <div class="card_col">
               <div class="card_img">
                 <img src="assets/images/events/b.jpg" alt="">
+                <div class="label_overlay btm_post">
+                  <h5>Article</h5>
+                </div>
               </div>
               <div class="card_img_des">
                 <h1>Inspiring Curiosity and critical in kids</h1>
@@ -68,6 +77,9 @@
             <div class="card_col">
               <div class="card_img">
                 <img src="assets/images/events/b.jpg" alt="">
+                <div class="label_overlay btm_post">
+                  <h5>Article</h5>
+                </div>
               </div>
               <div class="card_img_des">
                 <h1>Inspiring Curiosity and critical in kids</h1>
@@ -87,6 +99,9 @@
             <div class="card_col">
               <div class="card_img">
                 <img src="assets/images/events/b.jpg" alt="">
+                <div class="label_overlay btm_post">
+                  <h5>Article</h5>
+                </div>
               </div>
               <div class="card_img_des">
                 <h1>Inspiring Curiosity and critical in kids</h1>

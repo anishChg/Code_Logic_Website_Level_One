@@ -74,4 +74,37 @@ $($overlay).removeClass('overlay-open');
 });
 
 
+    document.addEventListener('DOMContentLoaded', function() {
+        var lastScrollTop = 0;
+        var navHeader = document.querySelector('.nav_header');
+        var topHeadHeight = document.querySelector('.top_head').offsetHeight;
+
+        window.addEventListener('scroll', function() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop <= 0) {
+                // User is at the top of the page
+                navHeader.classList.remove('sticky');
+                navHeader.classList.remove('hidden');
+            } else if (scrollTop > lastScrollTop) {
+                // User is scrolling down
+                navHeader.classList.remove('sticky');
+                navHeader.classList.add('hidden');
+            } else {
+                // User is scrolling up
+                navHeader.classList.add('sticky');
+                navHeader.classList.remove('hidden');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    });
+
+
+
+
+
+
+
+
 
