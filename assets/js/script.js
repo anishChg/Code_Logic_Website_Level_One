@@ -1,5 +1,5 @@
 var $body = $('body'),
-$overlay = $('.global-overlay');
+  $overlay = $('.global-overlay');
 
 
 
@@ -37,14 +37,14 @@ $overlay = $('.global-overlay');
 /***** Toolbar Button Click Function *******/
 
 $('.js-toolbar-btn').on('click', function (e) {
-e.preventDefault();
-e.stopPropagation();
-var $this = $(this);
-var target = $this.data('target');
-$body.toggleClass('body-open');
-$(target).toggleClass('open');
-$($overlay).addClass('overlay-open');
-$this.toggleClass('open');
+  e.preventDefault();
+  e.stopPropagation();
+  var $this = $(this);
+  var target = $this.data('target');
+  $body.toggleClass('body-open');
+  $(target).toggleClass('open');
+  $($overlay).addClass('overlay-open');
+  $this.toggleClass('open');
 });
 
 
@@ -67,44 +67,73 @@ $this.toggleClass('open');
 /***** Close Button Click Function *******/
 
 $('.btn-close').on('click', function (e) {
-e.preventDefault();
-var $this = $(this);
-$this.parents('.open').removeClass('open');
-$($overlay).removeClass('overlay-open');
+  e.preventDefault();
+  var $this = $(this);
+  $this.parents('.open').removeClass('open');
+  $($overlay).removeClass('overlay-open');
 });
 
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var lastScrollTop = 0;
-        var navHeader = document.querySelector('.nav_header');
-        var topHeadHeight = document.querySelector('.top_head').offsetHeight;
+// STICKY HEADER & MENU
 
-        window.addEventListener('scroll', function() {
-            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+// Hide header on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('.nav_header').outerHeight();
 
-            if (scrollTop <= 0) {
-                // User is at the top of the page
-                navHeader.classList.remove('sticky');
-                navHeader.classList.remove('hidden');
-            } else if (scrollTop > lastScrollTop) {
-                // User is scrolling down
-                navHeader.classList.remove('sticky');
-                navHeader.classList.add('hidden');
-            } else {
-                // User is scrolling up
-                navHeader.classList.add('sticky');
-                navHeader.classList.remove('hidden');
-            }
+$(window).scroll(function (event) {
+  didScroll = true;
+});
 
-            lastScrollTop = scrollTop;
-        });
-    });
+setInterval(function () {
+  if (didScroll) {
+    hasScrolled();
+    didScroll = false;
+  }
+}, 250);
 
+function hasScrolled() {
+  var st = $(this).scrollTop();
 
+  // Make scroll more than delta
+  if (Math.abs(lastScrollTop - st) <= delta)
+    return;
 
+  // If scrolled down and past the navbar, add class .nav-up.
+  if (st > lastScrollTop && st > navbarHeight) {
+    // Scroll Down
+    $('.nav_header').removeClass('nav-down').addClass('nav-up');
+  } else {
+    // Scroll Up
+    if (st + $(window).height() < $(document).height()) {
+      $('.nav_header').removeClass('nav-up').addClass('nav-down');
+    }
+  }
 
+  lastScrollTop = st;
+}
 
+// NAV STICKY ENDS 
 
+// COUNTER 
+function startCounter(wrapper) {
+  const counterElement = wrapper.querySelector(".exp_flx h1");
+  const targetValue = parseInt(counterElement.innerText);
+  let currentValue = 0;
+
+  const increment = Math.ceil(targetValue / 100);
+
+  const interval = setInterval(() => {
+    if (currentValue >= targetValue) {
+      clearInterval(interval);
+    } else {
+      currentValue += increment;
+      currentValue = Math.min(currentValue, targetValue);
+      counterElement.innerText = currentValue;
+    }
+  }, 20);
+}
 
 
 

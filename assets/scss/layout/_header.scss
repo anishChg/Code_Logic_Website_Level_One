@@ -1,27 +1,4 @@
-/* Add this to your existing CSS file */
 
-.top_head {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1001; /* Ensure it's above other elements */
-}
-
-.nav_header {
-  position: fixed;
-  top: 50px; /* Adjust based on the height of .top_head */
-  width: 100%;
-  z-index: 1000;
-  transition: top 0.3s ease-in-out;
-}
-
-.nav_header.hidden {
-  top: -50px; /* Adjust this value based on the header height */
-}
-
-.nav_header.sticky {
-  top: 50px; /* Same as the height of .top_head */
-}
 
 
 header {
@@ -78,58 +55,74 @@ header {
 
   // top header end 
 
-  .nav_header {
-    background-color: $primary-color;
-    color: $white-color;
+}
 
-    .header_main {
+// NAVIGATION MENU 
+.nav-up{
+  position: sticky;
+  top: -100px;
+  z-index: 99999;
+  width: 100%;
+}
+.nav-down{
+  top: 0px;
+  position: sticky;
+  top: 0px;
+  z-index: 99999;
+  width: 100%;
+}
+.nav_header {
+  background-color: $primary-color;
+  color: $white-color;
+transition: $transition;
+  .header_main {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0;
+
+    .header_col_left {
+      justify-content: flex-start;
+    }
+
+    .header_col_right {
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+
+    .header_col {
+      flex: 1 0 auto;
       display: flex;
       align-items: center;
-      padding: 0.8rem 0;
-
-      .header_col_left {
-        justify-content: flex-start;
-      }
-
-      .header_col_right {
-        justify-content: flex-end;
-        gap: 1rem;
-      }
-
-      .header_col {
-        flex: 1 0 auto;
-        display: flex;
-        align-items: center;
 
 
 
-        .balpatrika_btn {
-          button {
-            font-family: 'apra' !important;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+      .balpatrika_btn {
+        button {
+          font-family: 'apra' !important;
+          display: flex;
+          align-items: center;
+          gap: 8px;
 
-            @include max(767px) {
-              padding: 0.4rem 1rem;
-            }
+          @include max(767px) {
+            padding: 0.4rem 1rem;
+          }
 
-            img {
-              width: 1.37rem;
-            }
+          img {
+            width: 1.37rem;
+          }
 
-            span {
-              position: relative;
-              top: 3px;
-            }
+          span {
+            position: relative;
+            top: 3px;
           }
         }
-
-        .header_menu {}
       }
+
+      .header_menu {}
     }
   }
 }
+// NAVIGATION MENU ENDS 
 
 
 // Header Logo 
